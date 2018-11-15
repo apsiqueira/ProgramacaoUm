@@ -1,12 +1,15 @@
 package application;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
-import entityes.*;
+import entityes.Formula1;
+import entityes.PilotoPrincipal;
+import entityes.PilotoTeste;
 
 public class Application {
 
@@ -14,6 +17,9 @@ public class Application {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		int corredores = 0;
+		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
+		Date data;
+		
 		try {
 			System.out.println("###############Cadastro de Corrida F1##############");
 
@@ -25,9 +31,22 @@ public class Application {
 			
 			System.out.print("entre com o instagram  da empresa F1 :");
 			String instagramOfficial = sc.next();
-			Formula1 f1 = new Formula1(cnpj, instagramOfficial);
+			
+			System.out.print("entre com a data :");
+			String dataCorrida = sc.next();
+			data= sdf.parse(dataCorrida);
+			System.out.println();
+			
+			
+			Formula1 f1 = new Formula1(cnpj, instagramOfficial,data);
+			
+			
+			
+			  
+			
+			
 
-			while (corredores < 2) {
+			while (corredores < 1) {
 				System.out.println("###############Cadastro de Piloto##############");
 				System.out.println("entre com a sua equipe :");
 				String equipe = sc.next();

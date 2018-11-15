@@ -1,17 +1,21 @@
 package entityes;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Formula1 {
 
 	private Integer cnpj;
 	private String instagramOfficial;
 	private ArrayList<Piloto> pilotos;
+	private Date data;
 
-	public Formula1(Integer cnpj, String instagramOfficial) {
+
+	public Formula1(Integer cnpj, String instagramOfficial,Date data) {
 		this.cnpj = cnpj;
 		this.instagramOfficial = instagramOfficial;
 		this.pilotos = new ArrayList<Piloto>();
+		this.data=data;
 
 	}
 
