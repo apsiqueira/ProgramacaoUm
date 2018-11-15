@@ -1,5 +1,6 @@
 package application;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
@@ -7,13 +8,15 @@ import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
+
+
 import entityes.Formula1;
 import entityes.PilotoPrincipal;
 import entityes.PilotoTeste;
 
 public class Application {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		int corredores = 0;
@@ -21,6 +24,8 @@ public class Application {
 		Date data;
 		
 		try {
+			Date now=new Date();
+			System.out.println(now);
 			System.out.println("###############Cadastro de Corrida F1##############");
 
 			System.out.print("entre com cnpj da empresa F1 :");
@@ -35,7 +40,8 @@ public class Application {
 			System.out.print("entre com a data :");
 			String dataCorrida = sc.next();
 			data= sdf.parse(dataCorrida);
-			System.out.println();
+			System.out.println(data);
+			
 			
 			
 			Formula1 f1 = new Formula1(cnpj, instagramOfficial,data);
